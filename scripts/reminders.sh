@@ -1,5 +1,9 @@
 #!/bin/bash
 
+SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+
+source "$SCRIPT_DIR/../config/settings.conf"
+
 while true; do
 
     sleep 3600  # Every hour
@@ -10,5 +14,5 @@ while true; do
     notify-send "Time to take a walk!"
     sleep 86400 # Every day
     notify-send "Did you read a book today?"
-    
+
 done

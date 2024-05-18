@@ -13,16 +13,18 @@ install_dependencies() {
 add_to_bashrc() {
 
     echo "Adding programmingHabits to .bashrc..."
+
+    SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+    MAIN_SCRIPT="$SCRIPT_DIR/scripts/main.sh"
+    REMINDERS_SCRIPT="$SCRIPT_DIR/scripts/reminders.sh"
     
     # Check if the entries already exist in .bashrc
-    if ! grep -q "bash $(pwd)/scripts/main.sh &" ~/.bashrc; then
-        echo >> ~/.bashrc
-        echo "bash $(pwd)/scripts/main.sh &" >> ~/.bashrc
+    if ! grep -q "bash $MAIN_SCRIPT &" ~/.bashrc; then
+        echo "bash $MAIN_SCRIPT &" >> ~/.bashrc
     fi
-    
-    if ! grep -q "bash $(pwd)/scripts/reminders.sh &" ~/.bashrc; then
-        echo >> ~/.bashrc
-        echo "bash $(pwd)/scripts/reminders.sh &" >> ~/.bashrc
+
+    if ! grep -q "bash $REMINDERS_SCRIPT &" ~/.bashrc; then
+        echo "bash $REMINDERS_SCRIPT &" >> ~/.bashrc
     fi
 
     source ~/.bashrc
