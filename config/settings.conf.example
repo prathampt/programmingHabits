@@ -1,0 +1,4 @@
+
+WORK_TIME=1500  # 25 minutes
+BREAK_TIME=300  # 5 minutes
+SNOOZE_TIME=300 # 5 minutes
