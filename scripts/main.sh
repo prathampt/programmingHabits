@@ -1,8 +1,13 @@
 #!/bin/bash
 
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+CONFIG_FILE="$SCRIPT_DIR/../config/settings.conf"
 
-source "$SCRIPT_DIR/../config/settings.conf"
+load_config() {
+    source $CONFIG_FILE
+}
+
+load_config
 
 while true; do
 
@@ -18,6 +23,9 @@ while true; do
         rating=$(zenity --scale --text="Rate this session:" --min-value=1 --max-value=5 --value=3 2> /dev/null)
         echo "$(date): $rating" >> $SCRIPT_DIR/../logs/session.log
     else
-        sleep $SNOOZE_TIME 
+        sleep $SNOOZE_TIME
     fi
+
+    # Reload configuration at every break to apply changes in the config file
+    load_config
 done
