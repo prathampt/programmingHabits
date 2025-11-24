@@ -1,26 +1,43 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-Origin: ProgrammingHabits
-Label: ProgrammingHabits
-Suite: stable
-Codename: stable
 Architectures: amd64
+Codename: stable
 Components: main
-Description: Productivity timer with health breaks for Linux
+Date: Mon, 24 Nov 2025 11:57:58 +0000
+Description: Productivity timer with health breaks
+Label: ProgrammingHabits
+Origin: ProgrammingHabits
+Suite: stable
+MD5Sum:
+ 05fabf793183dabf1361e50341ce8de1              629 Packages
+ 36750c73560aa3e022f085c3a58f7206              462 Packages.gz
+ 4a119b29b109878fe1d1ad30246939ba              209 Release
+SHA1:
+ fa7e91076dc0fb52fdc124710cb456dcc8cec1da              629 Packages
+ e6df5c282af93a1f40a6f8567a6b6586af44e1d2              462 Packages.gz
+ b0a6fe6d8f829007484caf1468fb3620bcb42cfb              209 Release
+SHA256:
+ 8de2e939c6c348c646c990dba913013a5c9b6388448952151c70f575998cfcce              629 Packages
+ 98827526daae92621038f3fb1c7cb006653ac9d73abd578e2cff4dba2a51321f              462 Packages.gz
+ e8c6870f8f89c482a13e2493fd6a51934545b8f40642cfc5a00dddb0473333a6              209 Release
+SHA512:
+ 2831e3cbd0b737ea28d4a3b354d298741a973370e47706409f9a640a303322e07d85f72d145dfefaf764fe92372ceef779b6ff6f21942a3aaaf9cd9b2c1aedff              629 Packages
+ 6e04c954320338d4f5d158da31d1fe502151d46eed47f101077ef35e60ef02ef02032ebea4d062f55ef5aec7bbc7a2aabd1b79a193f89ae4075e586e848f0325              462 Packages.gz
+ 374cc8f9140b3bf0b98fb8c93ec60454dc67bb221618208e8539d294edad822f0fb58cdf16380f628167dfd10699169df6013bce5806710a19522850716e52fd              209 Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEqAkwPmOTVQUSFE1oSc2+dmrqbhwFAmkkQpsACgkQSc2+dmrq
-bhxZMQ//YM/IJ1D0mF/YgfMB8S7+r1ymSpFtV3WSPn0EWpfyaaVPVG06htuQrKdo
-ubFVFBv+IOCbGMNTUEFg/RCa9FrgAzcSrCHYOQNBdBPXHSmDKNutIDoRLzPNsWoW
-k4/ebqosgfjLyQf+JNCTNO4KhS3dsRZZ0enl/bHmz4/KlTH5KDsJg0Q+XzFaWBxm
-QX3kcYENzeExLKLy6WKKwd6im55F55HCa3cXlCl9ea8lH46jKrHUDwUqm0YPtjBK
-jVhy7Bqj8W2QFjh05d6Vj6SScrwADcWo09YHkO+DFtkMgi2lQRvLrRAYMpAKymBJ
-4VaGgEmY1umnQ2VbZnV28aVWB3+Mty0u6I+omJ0uhxD3oGWWSs/BY5w2xwmctGZL
-c1z+LG/uEdzrcfat2hMbmWJKUKdlM4/cqJtEd9LqUDHFVmfRv5ailxIga2v4ybnr
-1ki1OwbpP6xg7WhQIo4M2hpx/lfcdzR6Ts1PQPefD+nCHoHNjT9hStTIYQH4fdZd
-dqvMpupNEdYg2wCY7SEyIBrdW/6XEATfBcvvJ/En3IesutQntNSkrJ+NABjAYyc2
-s8AGV02BHeRzNn3o5M8qVCJfUhIyXBtFyxJvKsPV5O35zxCLolUVl6yVsEPqnEEq
-wbaZMtDawZpvdZmkkQE2cvrMApl3V46M6VqT9YNWn48MTfxcnIo=
-=DcFH
+iQIzBAEBCgAdFiEEqAkwPmOTVQUSFE1oSc2+dmrqbhwFAmkkSEcACgkQSc2+dmrq
+bhybPhAAm7YyFixNSqsNV/m+7J/LRUKNnfS3ZzsEWacqoKATWYgGpBO94t2+Oz4b
+CwLLBs2jx/JgLvFQzYYk6ptqYeZ9g2GhNZ4p8GByPpC2v9rCDWw4/kGE75Rn7+WP
+lacXpkMYysOhsOdMRujxXyyDkPT5kwBps8jcgkV9GHpYVSvRyGowE5rn15hLQfJE
+nnQx+b5q4ofeYU1B+2pbqsR2+KoAHXyN4gton4mo9bVPjiE5DcGBKlrqoimow84e
+C3ITJizrojFzm7odxdFUbC7mowv0wmgQorC4kJM6kDtQQdoWZWZ8ogLwPTAuRdle
+oseFw2s60qjvnuszmVYTW9ZjBLHW/DCv+7Btb76pOnNHKlWszi+momAlQoqPJbp/
+t4k0HFnzbfLmqAQmDo2exVHi0Fo9pdoOng2bv0hBiVxPHeZ3+nsTX6QRizPS63mS
+VsubKeK15h6NgT+lJl7kNghRSLACzR4pCQUIkexhJOfBpCQ8PDDZXS9mxIv9yjzI
+HrOHP1BAyxjZrI2Shs2mgj3IOWNk7IAUaYRce1IoGwIeCbDYKpTh/HT4bUHrVaNk
+WNurXLUE7zGpvFZW1ocPwppRM3s3vK3fx7kpCuD+S8UOblTGcOqhmuwH4SwXqSkG
+o1Oblm6L7BhS5klOP16MxcgEh48FqcAXldRwxbfRp5BqJ5nLPeo=
+=StOA
 -----END PGP SIGNATURE-----

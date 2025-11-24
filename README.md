@@ -52,7 +52,7 @@ As a programmer, I often found myself getting so engrossed in coding that I woul
 
 2.  **Add the Repository:**
     ```bash
-    echo "deb [signed-by=/etc/apt/trusted.gpg.d/programminghabits.gpg] https://prathampt.github.io/programmingHabits stable main" | sudo tee /etc/apt/sources.list.d/programminghabits.list
+    echo "deb [signed-by=/etc/apt/trusted.gpg.d/programminghabits.gpg] https://prathampt.github.io/programmingHabits/ /" | sudo tee /etc/apt/sources.list.d/programminghabits.list
     ```
 
 3.  **Install:**

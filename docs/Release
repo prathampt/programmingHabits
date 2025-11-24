@@ -1,7 +1,24 @@
-Origin: ProgrammingHabits
-Label: ProgrammingHabits
-Suite: stable
-Codename: stable
 Architectures: amd64
+Codename: stable
 Components: main
-Description: Productivity timer with health breaks for Linux
+Date: Mon, 24 Nov 2025 11:57:58 +0000
+Description: Productivity timer with health breaks
+Label: ProgrammingHabits
+Origin: ProgrammingHabits
+Suite: stable
+MD5Sum:
+ 05fabf793183dabf1361e50341ce8de1              629 Packages
+ 36750c73560aa3e022f085c3a58f7206              462 Packages.gz
+ 4a119b29b109878fe1d1ad30246939ba              209 Release
+SHA1:
+ fa7e91076dc0fb52fdc124710cb456dcc8cec1da              629 Packages
+ e6df5c282af93a1f40a6f8567a6b6586af44e1d2              462 Packages.gz
+ b0a6fe6d8f829007484caf1468fb3620bcb42cfb              209 Release
+SHA256:
+ 8de2e939c6c348c646c990dba913013a5c9b6388448952151c70f575998cfcce              629 Packages
+ 98827526daae92621038f3fb1c7cb006653ac9d73abd578e2cff4dba2a51321f              462 Packages.gz
+ e8c6870f8f89c482a13e2493fd6a51934545b8f40642cfc5a00dddb0473333a6              209 Release
+SHA512:
+ 2831e3cbd0b737ea28d4a3b354d298741a973370e47706409f9a640a303322e07d85f72d145dfefaf764fe92372ceef779b6ff6f21942a3aaaf9cd9b2c1aedff              629 Packages
+ 6e04c954320338d4f5d158da31d1fe502151d46eed47f101077ef35e60ef02ef02032ebea4d062f55ef5aec7bbc7a2aabd1b79a193f89ae4075e586e848f0325              462 Packages.gz
+ 374cc8f9140b3bf0b98fb8c93ec60454dc67bb221618208e8539d294edad822f0fb58cdf16380f628167dfd10699169df6013bce5806710a19522850716e52fd              209 Release
