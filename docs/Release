@@ -1,0 +1,7 @@
+Origin: ProgrammingHabits
+Label: ProgrammingHabits
+Suite: stable
+Codename: stable
+Architectures: amd64
+Components: main
+Description: Productivity timer with health breaks for Linux

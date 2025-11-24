@@ -5,7 +5,6 @@ wheels/
 *.egg-info
 .pybuild/
 
-*.deb
 build/
 debian/
 dist/

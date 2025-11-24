@@ -14,13 +14,19 @@ echo "Cleaning up old builds..."
 rm -rf build/ dist/ deb_dist/ *.spec
 
 echo "Compiling Binary..."
-uv run pyinstaller --noconfirm --onefile --windowed --clean \
+uv run pyinstaller --noconsole --onefile \
     --name "$APP_NAME" \
-    --add-data "programminghabits/assets:assets" \
+    --add-data "programminghabits/assets/programminghabits.png:assets" \
+    --add-data "programminghabits/assets/alert.wav:assets" \
     --hidden-import "dbus.mainloop.glib" \
     --hidden-import "PyQt6.QtMultimedia" \
-    --collect-all "PyQt6" \
-    --icon "programminghabits/assets/programminghabits.png" \
+    --exclude-module "PyQt6.QtQml" \
+    --exclude-module "PyQt6.QtQuick" \
+    --exclude-module "PyQt6.QtSql" \
+    --exclude-module "PyQt6.QtWebEngine" \
+    --exclude-module "PyQt6.QtWebEngineCore" \
+    --exclude-module "PyQt6.QtWebEngineWidgets" \
+    --collect-all "programminghabits" \
     programminghabits/main.py
 
 mkdir -p deb_dist/DEBIAN

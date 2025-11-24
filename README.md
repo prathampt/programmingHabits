@@ -43,20 +43,23 @@ As a programmer, I often found myself getting so engrossed in coding that I woul
 
 ## Installation
 
-### Option 1: Install via Debian Package (Recommended)
-You can install the application easily on Ubuntu, Debian, Linux Mint, or Kali Linux.
+### Option 1 (Recommended): Install via APT (Ubuntu/Debian/Mint)
 
-1. Download the latest `.deb` release.
-2. Install it using `dpkg`:
-   ```bash
-   sudo dpkg -i programminghabits_1.0.0_amd64.deb
-   ```
-   *(If you encounter dependency errors, run `sudo apt --fix-broken install`)*
+1.  **Add the Repository Key:**
+    ```bash
+    curl -fsSL https://prathampt.github.io/programmingHabits/KEY.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/programminghabits.gpg
+    ```
 
-3. Launch it from your Application Menu (type "Programming Habits") or terminal:
-   ```bash
-   programminghabits
-   ```
+2.  **Add the Repository:**
+    ```bash
+    echo "deb [signed-by=/etc/apt/trusted.gpg.d/programminghabits.gpg] https://prathampt.github.io/programmingHabits stable main" | sudo tee /etc/apt/sources.list.d/programminghabits.list
+    ```
+
+3.  **Install:**
+    ```bash
+    sudo apt update
+    sudo apt install programminghabits
+    ```
 
 ### Option 2: Build from Source
 If you want to contribute or build it manually:
