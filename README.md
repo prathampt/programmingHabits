@@ -45,17 +45,22 @@ As a programmer, I often found myself getting so engrossed in coding that I woul
 
 ### Option 1 (Recommended): Install via APT (Ubuntu/Debian/Mint)
 
-1.  **Add the Repository Key:**
+1.  **Make sure you have dependencies:**
+    ```bash
+    sudo apt install dbus
+    ```
+
+2.  **Add the Repository Key:**
     ```bash
     curl -fsSL https://prathampt.github.io/programmingHabits/KEY.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/programminghabits.gpg
     ```
 
-2.  **Add the Repository:**
+3.  **Add the Repository:**
     ```bash
     echo "deb [signed-by=/etc/apt/trusted.gpg.d/programminghabits.gpg] https://prathampt.github.io/programmingHabits/ /" | sudo tee /etc/apt/sources.list.d/programminghabits.list
     ```
 
-3.  **Install:**
+4.  **Install:**
     ```bash
     sudo apt update
     sudo apt install programminghabits
@@ -64,23 +69,28 @@ As a programmer, I often found myself getting so engrossed in coding that I woul
 ### Option 2: Build from Source
 If you want to contribute or build it manually:
 
-1. **Clone the Repository**:
+1.  **Make sure you have dependencies:**
+    ```bash
+    sudo apt install dbus
+    ```
+
+2. **Clone the Repository**:
     ```bash
     git clone https://github.com/prathampt/programmingHabits
     cd programmingHabits
     ```
 
-2. **Install Dependencies** (Using `uv` is recommended):
+3. **Install Dependencies** (Using `uv` is recommended):
     ```bash
     uv sync
     ```
 
-3. **Run in Dev Mode**:
+4. **Run in Dev Mode**:
     ```bash
     uv run python -m programminghabits.main
     ```
 
-4. **Compile to .deb**:
+5. **Compile to .deb**:
     Run the included build script to generate a standalone Debian package using PyInstaller:
     ```bash
     chmod +x build_deb.sh
