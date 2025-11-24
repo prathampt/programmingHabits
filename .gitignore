@@ -1,1 +1,19 @@
-logs/
+# Python-generated files
+__pycache__/
+*.py[oc]
+wheels/
+*.egg-info
+.pybuild/
+
+*.deb
+build/
+debian/
+dist/
+deb_dist/
+*.spec
+
+# Virtual environments
+.venv
+uv.lock
+
+update_repo.sh

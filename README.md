@@ -1,91 +1,117 @@
 <p align="center">
-  <img src="https://img.icons8.com/?size=512&id=52515&format=png" width="150" />
-  
+<img src="https://img.icons8.com/?size=512&id=52515&format=png" width="150" />
 </p>
 <p align="center">
-    <h1 align="center">programmingHabits</h1>
+<h1 align="center">programmingHabits</h1>
 </p>
 <p align="center">
-  <img src="https://img.shields.io/github/license/prathampt/programmingHabits?style=flat&color=0080ff" alt="license">
-	<img src="https://img.shields.io/github/last-commit/prathampt/programmingHabits?style=flat&logo=git&logoColor=white&color=0080ff" alt="last-commit">
-	<img src="https://img.shields.io/github/languages/top/prathampt/programmingHabits?style=flat&color=0080ff" alt="repo-top-language">
-	<img src="https://img.shields.io/github/languages/count/prathampt/programmingHabits?style=flat&color=0080ff" alt="repo-language-count">
+<img src="https://img.shields.io/github/license/prathampt/programmingHabits?style=flat&color=0080ff" alt="license">
+<img src="https://img.shields.io/github/last-commit/prathampt/programmingHabits?style=flat&logo=git&logoColor=white&color=0080ff" alt="last-commit">
+<img src="https://img.shields.io/github/languages/top/prathampt/programmingHabits?style=flat&color=0080ff" alt="repo-top-language">
+<img src="https://img.shields.io/github/languages/count/prathampt/programmingHabits?style=flat&color=0080ff" alt="repo-language-count">
 </p>
 <p align="center">
-		<em>Developed with: </em>
+<em>Developed with: </em>
 </p>
 <p align="center">
-	<img src="https://img.shields.io/badge/Bash-4EAA25.svg?style=flat&logo=gnu-bash&logoColor=white" alt="Bash">
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python">
+<img src="https://img.shields.io/badge/Qt-41CD52?style=flat&logo=qt&logoColor=white" alt="Qt">
+</p>
+<p align="center">
+<em>Developed for: </em>
+</p>
+<p align="center">
+<img src="https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black" alt="Linux">
 </p>
 <hr>
 
 ## Description
-**programmingHabits** is a shell script designed to enhance your productivity by integrating the Pomodoro technique into your daily routine. It provides regular break reminders, allows you to rate your work sessions, and includes additional reminders for drinking water, eating, walking, and reading.
+**programmingHabits** is a native Linux productivity tool designed to integrate the Pomodoro technique into your desktop environment. Unlike simple timers, it enforces healthy habits by taking over your screen during breaks, ensuring you actually stop working to stretch, hydrate, and rest your eyes. It is built to look and feel like a native part of your Desktop Environment.
 
 ## Inspiration
-As a programmer, I often found myself getting so engrossed in coding that I would forget to take breaks, stay hydrated, or even move around. This led to fatigue and decreased productivity over time. Realizing the importance of maintaining good habits and overall health, I decided to create a project that would help programmers like me stay healthy and productive. Thus, **programmingHabits** was born, a tool to remind us to take care of ourselves while we code.
-
+As a programmer, I often found myself getting so engrossed in coding that I would forget to take breaks, stay hydrated, or even move around. This led to fatigue and a decline in productivity over time. Realising the importance of maintaining good habits and overall health, I decided to create a project that would help programmers like me stay healthy and productive. Thus, **programmingHabits** was born, a tool to remind us to take care of ourselves while we code.
 
 ## Features
-- **Pomodoro Timer**: Customizable work and break periods.
-- **Notifications**: Alerts for breaks and work resumption.
-- **Snooze Functionality**: Option to snooze break reminders.
-- **Session Rating**: Rate your productivity after each session.
-- **Session Analysis**: Analyze your productivity over time.
-- **Healthy Reminders**: Regular reminders to drink water, eat, take walks, read books, exercise and many more.
 
-Suggestions are welcome...
+- **Smart Pomodoro Timer:** Customizable work and break intervals stored permanently.
+- **Enforced Breaks:** A full-screen, semi-transparent overlay blocks the screen, gently forcing you to step away.
+- **Native Theme Integration:** Automatically detects your Linux Desktop theme and adapts the UI to match it perfectly.
+- **Smart Media Control:** Automatically pauses Spotify, YouTube, or any media player when a break starts (via DBus).
+- **Health & Wisdom:** Displays curated health tips and programming wisdom during breaks.
+- **System Tray Control:** Manage the timer, access settings, or quit the app directly from your system tray.
+- **Audio Alerts:** Gentle chimes to signal the start and end of breaks (supports native system audio).
 
-## Usage
+## Installation
+
+### Option 1: Install via Debian Package (Recommended)
+You can install the application easily on Ubuntu, Debian, Linux Mint, or Kali Linux.
+
+1. Download the latest `.deb` release.
+2. Install it using `dpkg`:
+   ```bash
+   sudo dpkg -i programminghabits_1.0.0_amd64.deb
+   ```
+   *(If you encounter dependency errors, run `sudo apt --fix-broken install`)*
+
+3. Launch it from your Application Menu (type "Programming Habits") or terminal:
+   ```bash
+   programminghabits
+   ```
+
+### Option 2: Build from Source
+If you want to contribute or build it manually:
+
 1. **Clone the Repository**:
     ```bash
     git clone https://github.com/prathampt/programmingHabits
     cd programmingHabits
     ```
 
-2. **Configuration**:
-    - Edit the configuration file `config/settings.conf` to customize your session and break times.
-    - Default values:
-      ```ini
-      WORK_TIME=1500  # 25 minutes
-      BREAK_TIME=300  # 5 minutes
-      ```
+2. **Install Dependencies** (Using `uv` is recommended):
+    ```bash
+    uv sync
+    ```
 
-3. **Running the Scripts**:
-    - Start the main Pomodoro timer script:
-      ```bash
-      bash scripts/main.sh
-      ```
-    - Start the additional reminders script:
-      ```bash
-      bash scripts/reminders.sh
-      ```
+3. **Run in Dev Mode**:
+    ```bash
+    uv run python -m programminghabits.main
+    ```
 
-4. **Add to Startup**:
-    - Ensure the scripts run when your system starts by adding the following lines to your `.bashrc` or appropriate startup file:
-      ```bash
-      echo "bash /path/to/programmingHabits/scripts/main.sh &" >> ~/.bashrc
-      echo "bash /path/to/programmingHabits/scripts/reminders.sh &" >> ~/.bashrc
-      ```
+4. **Compile to .deb**:
+    Run the included build script to generate a standalone Debian package using PyInstaller:
+    ```bash
+    chmod +x build_deb.sh
+    ./build_deb.sh
+    ```
 
-5. **Session Analysis**:
-    - Analyze your session ratings:
-      ```bash
-      bash scripts/analyze.sh
-      ```
+## Architecture & Configuration
 
-## Files and Directories
-- `scripts/main.sh`: Main script for the Pomodoro timer.
-- `scripts/reminders.sh`: Script for hydration, eating, walking, and reading reminders.
-- `scripts/analyze.sh`: Script to analyze session ratings.
-- `config/settings.conf`: Configuration file for session and break times.
-- `logs/session.log`: Log file for session ratings.
+### Directory Structure
+The project is modularized for maintainability and scalability:
+
+- `programminghabits/main.py`: Entry point. Handles System Tray, Theme detection, and application lifecycle.
+- `programminghabits/ui_overlay.py`: Logic for the full-screen break window and media pausing.
+- `programminghabits/ui_settings.py`: The GUI for configuring time and preferences.
+- `programminghabits/config.py`: Handles saving/loading JSON settings to `~/.config/`.
+- `programminghabits/utils.py`: Resource path management for compiled binaries.
+- `programminghabits/assets/`: Stores icons and sound files.
+
+### Configuration
+The settings are stored in JSON format at:
+`~/.config/programminghabits/config.json`
+
+You can edit this file manually or use the **Settings GUI** via the System Tray icon to:
+- Enable/Disable the timer.
+- Change Work/Break duration.
+- Add your own custom motivational quotes.
 
 ## Technologies Used
-- **Bash**: The scripting language used for the entire project.
-- **zenity**: A tool for displaying GTK+ dialog boxes from the command line, used for user interaction.
-- **notify-send**: A command to send desktop notifications, used for break and reminder alerts.
-- **awk**: A programming language used for text processing and session analysis.
+- **Python 3**: The core logic language.
+- **PyQt6**: For a robust, cross-platform Graphical User Interface.
+- **DBus**: For communicating with Linux media players (Spotify/YouTube).
+- **Subprocess**: For detecting GNOME/GTK system themes and colors.
+- **PyInstaller**: For compiling the Python code into a standalone binary.
+- **Debian Packaging**: For native installation support.
 
 ## Contribution
 Feel free to fork this repository and submit pull requests. Your contributions are welcome!
@@ -95,30 +121,25 @@ Feel free to fork this repository and submit pull requests. Your contributions a
 
 1. **Fork the Repository**: Start by forking the project repository to your GitHub account.
 2. **Clone Locally**: Clone the forked repository to your local machine using a Git client.
-   ```sh
-   git clone https://github.com/prathampt/programmingHabits
-   ```
 3. **Create a New Branch**: Always work on a new branch, giving it a descriptive name.
    ```sh
-   git checkout -b new-feature-x
+   git checkout -b feature/amazing-feature
    ```
 4. **Make Your Changes**: Develop and test your changes locally.
 5. **Commit Your Changes**: Commit with a clear message describing your updates.
    ```sh
-   git commit -m 'Implemented new feature x.'
+   git commit -m 'Implemented amazing feature.'
    ```
 6. **Push to GitHub**: Push the changes to your forked repository.
    ```sh
-   git push origin new-feature-x
+   git push origin feature/amazing-feature
    ```
 7. **Submit a Pull Request**: Create a PR against the original project repository. Clearly describe the changes and their motivations.
-
-Once your PR is reviewed and approved, it will be merged into the main branch.
 
 </details>
 
 ## License
 This project is licensed under the *GNU GENERAL PUBLIC LICENSE Version 3* - see the [LICENSE](LICENSE) file for details.
 
-### Fork and Star..
-Don't forget to fork the repository and give a star if you liked it...
+### Fork and Star
+Don't forget to fork the repository and give a star if you find it useful! Happy Coding & Stay Healthy.
