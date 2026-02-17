@@ -43,7 +43,29 @@ As a programmer, I often found myself getting so engrossed in coding that I woul
 
 ## Installation
 
-### Option 1 (Recommended): Install via APT (Ubuntu/Debian/Mint)
+### Option 1: Install via Pip (Universal Linux)
+
+This method works on any Linux distribution (Arch, Fedora, Debian, etc.).
+
+1.  **Install System Dependencies:**
+    You will need `dbus` and `python3` installed.
+    *   **Debian/Ubuntu:** `sudo apt install dbus python3-pip libdbus-1-dev libglib2.0-dev`
+    *   **Fedora:** `sudo dnf install dbus python3-pip dbus-devel glib2-devel`
+    *   **Arch:** `sudo pacman -S dbus python-pip`
+
+2.  **Clone and Install:**
+    ```bash
+    git clone https://github.com/prathampt/programmingHabits
+    cd programmingHabits
+    pip install .
+    ```
+
+3.  **Run:**
+    ```bash
+    programming-habits
+    ```
+
+### Option 2: Install via APT (Ubuntu/Debian/Mint)
 
 1.  **Make sure you have dependencies:**
     ```bash
@@ -66,8 +88,7 @@ As a programmer, I often found myself getting so engrossed in coding that I woul
     sudo apt install programminghabits
     ```
 
-### Option 2: Build from Source
-If you want to contribute or build it manually:
+### Option 3: Build from Source (For Developers)
 
 1.  **Make sure you have dependencies:**
     ```bash
@@ -90,7 +111,7 @@ If you want to contribute or build it manually:
     uv run python -m programminghabits.main
     ```
 
-5. **Compile to .deb**:
+5. **Compile to .deb (Debian/Ubuntu only)**:
     Run the included build script to generate a standalone Debian package using PyInstaller:
     ```bash
     chmod +x build_deb.sh
