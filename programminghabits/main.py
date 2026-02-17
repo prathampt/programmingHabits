@@ -1,6 +1,5 @@
 import sys
 import os
-os.environ["QT_QPA_PLATFORMTHEME"] = "gtk3"
 
 from dbus.mainloop.glib import DBusGMainLoop
 from PyQt6.QtWidgets import QApplication, QSystemTrayIcon, QMenu
@@ -106,6 +105,9 @@ class AppController:
     def run_logic(self):
         sys.exit(self.app.exec())
 
-if __name__ == "__main__":
+def main():
     controller = AppController()
     controller.run_logic()
+
+if __name__ == "__main__":
+    main()

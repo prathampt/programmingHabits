@@ -1,6 +1,7 @@
 import os
 import random
 import subprocess
+import shutil
 import dbus
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QLabel, QPushButton, QFrame, QGraphicsDropShadowEffect
 from PyQt6.QtCore import Qt, QTimer, QUrl
@@ -78,44 +79,45 @@ class BreakOverlay(QWidget):
         Trying multiple approaches
         Returns a Hex string.
         """
-        try:
-            # Try modern GNOME accent-color (Ubuntu 22.04+)
-            output = subprocess.check_output(
-                ["gsettings", "get", "org.gnome.desktop.interface", "accent-color"],
-                stderr=subprocess.DEVNULL
-            ).decode("utf-8").strip().strip("'")
+        if shutil.which("gsettings"):
+            try:
+                # Try modern GNOME accent-color (Ubuntu 22.04+)
+                output = subprocess.check_output(
+                    ["gsettings", "get", "org.gnome.desktop.interface", "accent-color"],
+                    stderr=subprocess.DEVNULL
+                ).decode("utf-8").strip().strip("'")
 
-            colors = {
-                'green': '#26a269',   # Ubuntu Yaru Green
-                'orange': '#e95420',  # Ubuntu Classic
-                'blue': '#3584e4',    # Adwaita
-                'teal': '#21a6cb',
-                'purple': '#9141ac',
-                'red': '#e01b24',
-                'yellow': '#f5c211',
-                'bark': '#787c72',
-                'pink': '#d56199',
-                'slate': '#5e5c64'
-            }
-            if output in colors:
-                return colors[output]
+                colors = {
+                    'green': '#26a269',   # Ubuntu Yaru Green
+                    'orange': '#e95420',  # Ubuntu Classic
+                    'blue': '#3584e4',    # Adwaita
+                    'teal': '#21a6cb',
+                    'purple': '#9141ac',
+                    'red': '#e01b24',
+                    'yellow': '#f5c211',
+                    'bark': '#787c72',
+                    'pink': '#d56199',
+                    'slate': '#5e5c64'
+                }
+                if output in colors:
+                    return colors[output]
 
-        except Exception:
-            pass
+            except Exception:
+                pass
 
-        # Fallback: Try to guess based on GTK Theme Name
-        try:
-            theme = subprocess.check_output(
-                ["gsettings", "get", "org.gnome.desktop.interface", "gtk-theme"],
-                stderr=subprocess.DEVNULL
-            ).decode("utf-8").strip().strip("'")
+            # Fallback: Try to guess based on GTK Theme Name
+            try:
+                theme = subprocess.check_output(
+                    ["gsettings", "get", "org.gnome.desktop.interface", "gtk-theme"],
+                    stderr=subprocess.DEVNULL
+                ).decode("utf-8").strip().strip("'")
 
-            if "Yaru" in theme and "dark" not in theme and "blue" not in theme:
-                return "#e95420" # Standard Yaru is often Orange
-            if "Mint" in theme:
-                return "#92b752" # Mint Green
-        except Exception:
-            pass
+                if "Yaru" in theme and "dark" not in theme and "blue" not in theme:
+                    return "#e95420" # Standard Yaru is often Orange
+                if "Mint" in theme:
+                    return "#92b752" # Mint Green
+            except Exception:
+                pass
 
         # Qt Highlight (System Theme Plugin)
         qt_color = self.palette().color(QPalette.ColorRole.Highlight).name()
@@ -142,9 +144,14 @@ class BreakOverlay(QWidget):
         self.effect.setSource(QUrl.fromLocalFile(self.sound_path))
         self.effect.setVolume(0.5)
         self.effect.play()
-        # Above method can fail
-        try: subprocess.Popen(["paplay", self.sound_path], stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
-        except: pass
+        # Above method can fail, fallback to system players
+        try:
+            subprocess.Popen(["paplay", self.sound_path], stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
+        except Exception:
+            try:
+                subprocess.Popen(["aplay", self.sound_path], stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
+            except Exception:
+                pass
 
     def format_time(self, s): return f"{divmod(s, 60)[0]:02d}:{divmod(s, 60)[1]:02d}"
 
